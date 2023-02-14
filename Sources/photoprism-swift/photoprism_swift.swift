@@ -1,9 +1,13 @@
-public struct photoprism_swift {
+import Foundation
+import Get
+
+public class photoprism_swift {
     public private(set) var text = "Hello, World!"
+    var session: Session?
+    var id = ""
+    var flag = false
 
     public init() {
         print("Hello")
-
-        let session = Session.getSession(host: "192.168.0.38:20800", isSSL: false, user: User(username: "admin", password: "photo-mariko-broken"))
     }
 }
