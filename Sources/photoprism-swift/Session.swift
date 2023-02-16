@@ -11,7 +11,7 @@ struct Config: Codable {
     var downloadToken: String
 }
 
-class Session {
+public class Session {
     let id: String
     let baseURL: URL
     // let user: User

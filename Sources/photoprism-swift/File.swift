@@ -10,7 +10,7 @@ struct FileResponse: Codable {
     }
 }
 
-struct File {
+public struct File {
     let session: Session
     let hash: String
     let fileType: String

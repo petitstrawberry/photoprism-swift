@@ -12,7 +12,7 @@ struct PhotoDetailsResponse: Codable {
     }
 }
 
-struct PhotoDetails {
+public struct PhotoDetails {
     private let session: Session
     let uid: String
     let files: [File]

@@ -6,7 +6,7 @@
  * @desc User
  */
 
-struct User: Codable {
-    var username: String
-    var password: String
+public struct User: Codable {
+    let username: String
+    let password: String
 }

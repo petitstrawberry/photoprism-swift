@@ -5,7 +5,7 @@ struct PhotoResponse: Codable {
     let UID: String
 }
 
-class PhotoProvider {
+public class PhotoProvider {
     let session: Session
     let header: [String: String]
 

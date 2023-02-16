@@ -1,7 +1,7 @@
 import Foundation
 import Get
 
-enum ThumbSize: String {
+public enum ThumbSize: String {
     case tile50 = "tile_50"
     case tile100 = "tile_100"
     case tile224 = "tile_224"
@@ -19,7 +19,7 @@ enum ThumbSize: String {
     case fit7680 = "fit_7680"
 }
 
-struct Thumb {
+public struct Thumb {
     private let session: Session
     let hash: String
 

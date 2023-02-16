@@ -5,7 +5,7 @@ struct DownloadPhotoResponse: Codable {
     let UID: String
 }
 
-struct Photo {
+public struct Photo {
     private let session: Session
     let id: String
 
