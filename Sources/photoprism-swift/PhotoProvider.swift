@@ -35,20 +35,14 @@ class PhotoProvider {
                 headers: ["X-Session-ID": session.id]
             )
 
-            do {
-                let res: Response<[PhotoResponse]> = try await client.send(request)
+            let res: Response<[PhotoResponse]> = try await client.send(request)
 
-                if res.statusCode == 200 {
-                    let photos: [Photo] = res.value.map {
-                         Photo(session: session, id: $0.UID)
-                    }
-
-                    return photos
+            if res.statusCode == 200 {
+                let photos: [Photo] = res.value.map {
+                        Photo(session: session, id: $0.UID)
                 }
 
-            } catch let error {
-                print(error)
-                throw error
+                return photos
             }
 
             return []

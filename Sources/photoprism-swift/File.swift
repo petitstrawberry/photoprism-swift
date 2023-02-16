@@ -20,4 +20,8 @@ struct File {
         self.hash = response.hash
         self.fileType = response.fileType
     }
+
+    public func getThumb() async throws -> Thumb?{
+        return Thumb(session: session, hash: self.hash)
+    }
 }

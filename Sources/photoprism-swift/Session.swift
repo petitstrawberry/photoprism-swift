@@ -14,14 +14,14 @@ struct Config: Codable {
 class Session {
     let id: String
     let baseURL: URL
-    let user: User
+    // let user: User
     let client: PhotoPrismAPIClient
     let config: Config
 
-    private init(id: String, baseURL: URL, user: User, client: PhotoPrismAPIClient, config: Config) {
+    private init(id: String, baseURL: URL, client: PhotoPrismAPIClient, config: Config) {
         self.baseURL = baseURL
         self.id = id
-        self.user = user
+        // self.user = user
         self.client = client
         self.config = config
     }
@@ -40,7 +40,7 @@ class Session {
             if res.statusCode == 200 {
                 let id = res.value.id
                 let config = res.value.config
-                return Session(id: id, baseURL: baseURL!, user: user, client: client, config: config)
+                return Session(id: id, baseURL: baseURL!, client: client, config: config)
             }
             return nil
 

@@ -57,31 +57,31 @@ struct Photo {
         }
     }
 
-    public func getData() async throws -> Data? {
-        let client = session.client
+    // public func getData() async throws -> Data? {
+    //     let client = session.client
 
-        // Start sending requests
-        do {
-            let request: Request<[DownloadPhotoResponse]> = Request(
-                path: "/photos/\(id)/dl",
-                method: .get,
-                query: [("t", session.config.downloadToken)],
-                headers: ["X-Session-ID": session.id]
-            )
+    //     // Start sending requests
+    //     do {
+    //         let request: Request<[DownloadPhotoResponse]> = Request(
+    //             path: "/photos/\(id)/dl",
+    //             method: .get,
+    //             query: [("t", session.config.downloadToken)],
+    //             headers: ["X-Session-ID": session.id]
+    //         )
 
-            let res: Response<[DownloadPhotoResponse]> = try await client.send(request)
+    //         let res: Response<[DownloadPhotoResponse]> = try await client.send(request)
 
-            if res.statusCode == 200 {
-                print(res.value)
+    //         if res.statusCode == 200 {
+    //             print(res.value)
 
-                return nil
-            }
+    //             return nil
+    //         }
 
-            return nil
+    //         return nil
 
-        } catch let error {
-            print(error)
-            throw error
-        }
-    }
+    //     } catch let error {
+    //         print(error)
+    //         throw error
+    //     }
+    // }
 }
