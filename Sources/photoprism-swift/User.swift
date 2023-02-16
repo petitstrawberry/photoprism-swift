@@ -7,6 +7,6 @@
  */
 
 public struct User: Codable {
-    var username: String
-    var password: String
+    public var username: String
+    public var password: String
 }

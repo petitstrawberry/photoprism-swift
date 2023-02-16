@@ -21,7 +21,7 @@ public enum ThumbSize: String {
 
 public struct Thumb {
     private let session: Session
-    let hash: String
+    public let hash: String
 
     init(session: Session, hash: String) {
         self.session = session

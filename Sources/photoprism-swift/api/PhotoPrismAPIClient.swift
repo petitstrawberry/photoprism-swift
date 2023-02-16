@@ -1,4 +1,4 @@
 import Foundation
 import Get
 
-typealias PhotoPrismAPIClient = APIClient
+public typealias PhotoPrismAPIClient = APIClient

@@ -14,9 +14,9 @@ struct PhotoDetailsResponse: Codable {
 
 public struct PhotoDetails {
     private let session: Session
-    let uid: String
-    let files: [File]
-    let type: String
+    public let uid: String
+    public let files: [File]
+    public let type: String
 
     init(session: Session, response: PhotoDetailsResponse) {
         self.session = session

@@ -6,17 +6,17 @@ struct SessionResponse: Codable {
     var id: String
 }
 
-struct Config: Codable {
+public struct Config: Codable {
     var previewToken: String
     var downloadToken: String
 }
 
 public class Session {
-    let id: String
-    let baseURL: URL
+    public let id: String
+    public let baseURL: URL
     // let user: User
-    let client: PhotoPrismAPIClient
-    let config: Config
+    public let client: PhotoPrismAPIClient
+    public let config: Config
 
     private init(id: String, baseURL: URL, client: PhotoPrismAPIClient, config: Config) {
         self.baseURL = baseURL
