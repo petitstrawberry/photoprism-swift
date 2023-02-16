@@ -26,7 +26,7 @@ public class Session {
         self.config = config
     }
 
-    static func createSession(host: String, isSSL: Bool, user: User) async throws -> Session? {
+    static public func createSession(host: String, isSSL: Bool, user: User) async throws -> Session? {
         let baseURL = URL(string: isSSL ? "https://\(host)/api/v1" : "http://\(host)/api/v1")
 
         let client = PhotoPrismAPIClient(baseURL: baseURL)
