@@ -52,7 +52,8 @@ public class PhotoProvider {
                     ("camera", camera),
                     ("lens", lens),
                     ("year", year),
-                    ("order", order.rawValue)
+                    ("order", order.rawValue),
+                    ("quality", String(quality))
                 ],
                 headers: ["X-Session-ID": session.id]
             )
