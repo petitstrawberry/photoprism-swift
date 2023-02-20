@@ -25,7 +25,15 @@ public class PhotoProvider {
         count: Int = 1,
         offset: Int = 0,
         merged: Bool = true,
-        order: OrderType = .newest
+        country: String = "0",
+        camera: String = "0",
+        lens: String = "0",
+        year: String = "0",
+        month: String = "0",
+        color: String = "0",
+        order: OrderType = .newest,
+        public: Bool = true,
+        quality: Int = 3
     ) async throws -> [Photo] {
 
         let client = session.client
@@ -40,6 +48,10 @@ public class PhotoProvider {
                     ("count", String(count)),
                     ("offset", String(offset)),
                     ("merged", String(merged)),
+                    ("country", country),
+                    ("camera", camera),
+                    ("lens", lens),
+                    ("year", year),
                     ("order", order.rawValue)
                 ],
                 headers: ["X-Session-ID": session.id]
