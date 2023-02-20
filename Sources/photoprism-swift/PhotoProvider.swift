@@ -44,7 +44,7 @@ public class PhotoProvider {
                 path: "/photos",
                 method: .get,
                 query: [
-                    ("query", query),
+                    ("q", query),
                     ("count", String(count)),
                     ("offset", String(offset)),
                     ("merged", String(merged)),
