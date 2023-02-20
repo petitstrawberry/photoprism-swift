@@ -20,7 +20,13 @@ public class PhotoProvider {
         return try await search(count: count, offset: offset)
     }
 
-    public func search(query: String = "", count: Int = 1, offset: Int = 0) async throws -> [Photo] {
+    public func search(
+        query: String = "",
+        count: Int = 1,
+        offset: Int = 0,
+        merged: Bool = true
+    ) async throws -> [Photo] {
+
         let client = session.client
 
         // Start sending requests
@@ -31,7 +37,8 @@ public class PhotoProvider {
                 query: [
                     ("query", query),
                     ("count", String(count)),
-                    ("offset", String(offset))
+                    ("offset", String(offset)),
+                    ("merged", String(merged))
                 ],
                 headers: ["X-Session-ID": session.id]
             )
